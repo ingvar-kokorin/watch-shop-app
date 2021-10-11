@@ -1,1 +1,1 @@
-Attempt to understand MVC by creating some kinda of watch shop app.
+Watch shop MVC application
