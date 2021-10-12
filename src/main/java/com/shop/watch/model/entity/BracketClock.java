@@ -1,13 +1,20 @@
-package org.watchshop.model.entity;
+package com.shop.watch.model.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class BracketClock extends ClockForHome {
-    String lighting;
+    private String lighting;
 
-    public BracketClock(String brand, String modelName, MechanismTypes clockType, BigDecimal price, Colour colour,
-                        String producingCountry, LocalDate dateOfReceipt, int guarantee, double clockHeight,
+    public BracketClock(String brand,
+                        String modelName,
+                        Mechanism clockType,
+                        BigDecimal price,
+                        Colour colour,
+                        String producingCountry,
+                        LocalDate dateOfReceipt,
+                        int guarantee,
+                        double clockHeight,
                         double clockWidth, String lighting) {
         super(brand, modelName, clockType, price, colour, producingCountry, dateOfReceipt, guarantee, clockHeight,
                 clockWidth);

@@ -1,30 +1,35 @@
-package org.watchshop.model.entity;
+package com.shop.watch.model.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
-public abstract class ClockAbs {
+public abstract class Clock {
     private String brand;
     private String modelName;
-    private MechanismTypes clockType;
+    private Mechanism clockType;
     private BigDecimal price;
     private Colour colour;
     private String producingCountry;
-    private LocalDate dateOfReceipt;
-    private int Guarantee;
+    private LocalDate receiptDate;
+    private int guaranteePeriod;
 
-    public ClockAbs(String brand, String modelName, MechanismTypes clockType, BigDecimal price, Colour colour,
-                    String producingCountry, LocalDate dateOfReceipt, int guarantee) {
+    public Clock(String brand,
+                 String modelName,
+                 Mechanism clockType,
+                 BigDecimal price,
+                 Colour colour,
+                 String producingCountry,
+                 LocalDate receiptDate,
+                 int guaranteePeriod) {
         this.brand = brand;
         this.modelName = modelName;
         this.clockType = clockType;
         this.price = price;
         this.colour = colour;
         this.producingCountry = producingCountry;
-        this.dateOfReceipt = dateOfReceipt;
-        Guarantee = guarantee;
+        this.receiptDate = receiptDate;
+        this.guaranteePeriod = guaranteePeriod;
     }
 
     public String getBrand() {
@@ -43,11 +48,11 @@ public abstract class ClockAbs {
         this.modelName = modelName;
     }
 
-    public MechanismTypes getClockType() {
+    public Mechanism getClockType() {
         return clockType;
     }
 
-    public void setClockType(MechanismTypes clockType) {
+    public void setClockType(Mechanism clockType) {
         this.clockType = clockType;
     }
 
@@ -75,39 +80,43 @@ public abstract class ClockAbs {
         this.producingCountry = producingCountry;
     }
 
-    public LocalDate getDateOfReceipt() {
-        return dateOfReceipt;
+    public LocalDate getReceiptDate() {
+        return receiptDate;
     }
 
-    public void setDateOfReceipt(LocalDate dateOfReceipt) {
-        this.dateOfReceipt = dateOfReceipt;
+    public void setReceiptDate(LocalDate receiptDate) {
+        this.receiptDate = receiptDate;
     }
 
-    public int getGuarantee() {
-        return Guarantee;
+    public int getGuaranteePeriod() {
+        return guaranteePeriod;
     }
 
-    public void setGuarantee(int guarantee) {
-        Guarantee = guarantee;
+    public void setGuaranteePeriod(int guaranteePeriod) {
+        this.guaranteePeriod = guaranteePeriod;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ClockAbs)) return false;
-        ClockAbs clockAbs = (ClockAbs) o;
-        return getGuarantee() == clockAbs.getGuarantee()
-                && Objects.equals(getBrand(), clockAbs.getBrand())
-                && Objects.equals(getModelName(), clockAbs.getModelName()) && getClockType() == clockAbs.getClockType()
-                && Objects.equals(getPrice(), clockAbs.getPrice()) && getColour() == clockAbs.getColour()
-                && Objects.equals(getProducingCountry(), clockAbs.getProducingCountry())
-                && Objects.equals(getDateOfReceipt(), clockAbs.getDateOfReceipt());
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Clock)) {
+            return false;
+        }
+        Clock clock = (Clock) o;
+        return getGuaranteePeriod() == clock.getGuaranteePeriod()
+                && Objects.equals(getBrand(), clock.getBrand())
+                && Objects.equals(getModelName(), clock.getModelName()) && getClockType() == clock.getClockType()
+                && Objects.equals(getPrice(), clock.getPrice()) && getColour() == clock.getColour()
+                && Objects.equals(getProducingCountry(), clock.getProducingCountry())
+                && Objects.equals(getReceiptDate(), clock.getReceiptDate());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getBrand(), getModelName(), getClockType(), getPrice(), getColour(),
-                getProducingCountry(), getDateOfReceipt(), getGuarantee());
+                getProducingCountry(), getReceiptDate(), getGuaranteePeriod());
     }
 
     @Override
@@ -118,7 +127,7 @@ public abstract class ClockAbs {
                 "Price : " + price + " | " +
                 "Colour: " + colour + " | " +
                 "Country: " + producingCountry + " | " +
-                "Date: " + dateOfReceipt + " | " +
-                "Guarantee: " + Guarantee + " |";
+                "Date: " + receiptDate + " | " +
+                "Guarantee: " + guaranteePeriod + " |";
     }
 }

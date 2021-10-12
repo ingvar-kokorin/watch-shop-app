@@ -1,15 +1,21 @@
-package org.watchshop.model.entity;
+package com.shop.watch.model.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Objects;
 
-public abstract class ClockForHome extends ClockAbs {
-    double clockHeight;
-    double clockWidth;
+public abstract class ClockForHome extends Clock {
+    protected double clockHeight;
+    protected double clockWidth;
 
-    public ClockForHome(String brand, String modelName, MechanismTypes clockType, BigDecimal price, Colour colour,
-                        String producingCountry, LocalDate dateOfReceipt, int guarantee, double clockHeight,
+    public ClockForHome(String brand,
+                        String modelName,
+                        Mechanism clockType,
+                        BigDecimal price,
+                        Colour colour,
+                        String producingCountry,
+                        LocalDate dateOfReceipt,
+                        int guarantee,
+                        double clockHeight,
                         double clockWidth) {
         super(brand, modelName, clockType, price, colour, producingCountry, dateOfReceipt, guarantee);
         this.clockHeight = clockHeight;

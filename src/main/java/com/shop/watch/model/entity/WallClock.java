@@ -1,14 +1,22 @@
-package org.watchshop.model.entity;
+package com.shop.watch.model.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class WallClock extends ClockForHome {
-    String tickTockSoundIsPresent;
+    private String tickTockSoundIsPresent;
 
-    public WallClock(String brand, String modelName, MechanismTypes clockType, BigDecimal price, Colour colour,
-                     String producingCountry, LocalDate dateOfReceipt, int guarantee, double clockHeight,
-                     double clockWidth, String presenceOfSuspension) {
+    public WallClock(String brand,
+                     String modelName,
+                     Mechanism clockType,
+                     BigDecimal price,
+                     Colour colour,
+                     String producingCountry,
+                     LocalDate dateOfReceipt,
+                     int guarantee,
+                     double clockHeight,
+                     double clockWidth,
+                     String presenceOfSuspension) {
         super(brand, modelName, clockType, price, colour, producingCountry, dateOfReceipt, guarantee, clockHeight,
                 clockWidth);
         this.tickTockSoundIsPresent = presenceOfSuspension;
