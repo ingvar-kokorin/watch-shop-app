@@ -142,8 +142,8 @@ public class Controller {
             LocalDate dateOfReceipt = LocalDate.parse(view.getInputFromUser(),
                     DateTimeFormatter.ofPattern("d/M/yyyy"));
             view.printMessage(ENTER_GUARANTEE_PERIOD);
-            int guarantee = Integer.parseInt(view.getInputFromUser());
 
+            int guarantee = Integer.parseInt(view.getInputFromUser());
             if (userMessage.equals("1")) {
                 view.printMessage(ENTER_CLOCK_HEIGHT);
                 double height = Double.parseDouble(view.getInputFromUser());
