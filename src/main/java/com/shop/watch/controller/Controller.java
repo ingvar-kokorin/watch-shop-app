@@ -108,7 +108,7 @@ public class Controller {
     }
 
     private void printAllClocksSortedByReceipt() {
-        showAllClocks(model.sortClocksByDateOfReceipt());
+        showAllClocks(model.sortClocksByReceiptDate());
     }
 
     private void printTotalClocksCost() {
@@ -139,44 +139,80 @@ public class Controller {
             view.printMessage(ENTER_PRODUCING_COUNTRY);
             String producingCountry = view.getInputFromUser();
             view.printMessage(ENTER_RECEIPT_DATE);
-            LocalDate dateOfReceipt = LocalDate.parse(view.getInputFromUser(),
-                    DateTimeFormatter.ofPattern("d/M/yyyy"));
+            LocalDate receiptDate = LocalDate.parse(view.getInputFromUser(), DateTimeFormatter.ofPattern("d/M/yyyy"));
             view.printMessage(ENTER_GUARANTEE_PERIOD);
-
             int guarantee = Integer.parseInt(view.getInputFromUser());
+
             if (userMessage.equals("1")) {
-                view.printMessage(ENTER_CLOCK_HEIGHT);
-                double height = Double.parseDouble(view.getInputFromUser());
-                view.printMessage(ENTER_CLOCK_WIDTH);
-                double width = Double.parseDouble(view.getInputFromUser());
-                view.printMessage(ENTER_LIGHTING_PRESENCE);
-                String lighting = view.getInputFromUser();
-                model.addNewBracketClockInTheStorage(brand, modelName, clockType, price, colour, producingCountry,
-                        dateOfReceipt, guarantee, height, width, lighting);
-                view.printMessage(NEW_CLOCK_ADDED);
+                addBracketClock(brand, modelName, clockType, price, colour, producingCountry,
+                        receiptDate, guarantee);
             } else if (userMessage.equals("2")) {
-                view.printMessage(ENTER_CLOCK_HEIGHT);
-                double height = Double.parseDouble(view.getInputFromUser());
-                view.printMessage(ENTER_CLOCK_WIDTH);
-                double width = Double.parseDouble(view.getInputFromUser());
-                view.printMessage(ENTER_TICKTOCK_PRESENCE);
-                String tickTockSound = view.getInputFromUser();
-                model.addNewWallClockInTheStorage(brand, modelName, clockType, price, colour, producingCountry,
-                        dateOfReceipt, guarantee, height, width, tickTockSound);
-                view.printMessage(NEW_CLOCK_ADDED);
+                addWallClock(brand, modelName, clockType, price, colour, producingCountry,
+                        receiptDate, guarantee);
             } else {
-                view.printMessage(ENTER_BAND_MATERIAL);
-                String bandMaterial = view.getInputFromUser();
-                view.printMessage(CHOOSE_SEX);
-                int sexIndex = Integer.parseInt(view.getInputFromUser()) - 1;
-                Sex sex = Sex.values()[sexIndex];
-                model.addNewWristClockInTheStorage(brand, modelName, clockType, price, colour, producingCountry,
-                        dateOfReceipt, guarantee, bandMaterial, sex);
-                view.printMessage(NEW_CLOCK_ADDED);
+                addWristWatch(brand, modelName, clockType, price, colour, producingCountry,
+                        receiptDate, guarantee);
             }
+            view.printMessage(NEW_CLOCK_ADDED);
         } catch (Exception e) {
             view.printMessage(SOMETHING_GOES_WRONG);
         }
+    }
+
+    private void addBracketClock(String brand,
+                                 String modelName,
+                                 MechanismType clockType,
+                                 BigDecimal price,
+                                 Colour colour,
+                                 String producingCountry,
+                                 LocalDate receiptDate,
+                                 int guarantee) {
+        view.printMessage(ENTER_CLOCK_HEIGHT);
+        double height = Double.parseDouble(view.getInputFromUser());
+        view.printMessage(ENTER_CLOCK_WIDTH);
+        double width = Double.parseDouble(view.getInputFromUser());
+        view.printMessage(ENTER_LIGHTING_PRESENCE);
+        String lighting = view.getInputFromUser();
+
+        model.addBracketClockToStorage(brand, modelName, clockType, price, colour, producingCountry,
+                receiptDate, guarantee, height, width, lighting);
+    }
+
+    private void addWallClock(String brand,
+                              String modelName,
+                              MechanismType clockType,
+                              BigDecimal price,
+                              Colour colour,
+                              String producingCountry,
+                              LocalDate receiptDate,
+                              int guarantee) {
+        view.printMessage(ENTER_CLOCK_HEIGHT);
+        double height = Double.parseDouble(view.getInputFromUser());
+        view.printMessage(ENTER_CLOCK_WIDTH);
+        double width = Double.parseDouble(view.getInputFromUser());
+        view.printMessage(ENTER_TICKTOCK_PRESENCE);
+        String tickTockSound = view.getInputFromUser();
+
+        model.addWallClockToStorage(brand, modelName, clockType, price, colour, producingCountry,
+                receiptDate, guarantee, height, width, tickTockSound);
+    }
+
+    private void addWristWatch(String brand,
+                               String modelName,
+                               MechanismType clockType,
+                               BigDecimal price,
+                               Colour colour,
+                               String producingCountry,
+                               LocalDate receiptDate,
+                               int guarantee) {
+        view.printMessage(ENTER_BAND_MATERIAL);
+        String bandMaterial = view.getInputFromUser();
+        view.printMessage(CHOOSE_SEX);
+        int sexIndex = Integer.parseInt(view.getInputFromUser()) - 1;
+        Sex sex = Sex.values()[sexIndex];
+
+        model.addWristWatchToStorage(brand, modelName, clockType, price, colour, producingCountry,
+                receiptDate, guarantee, bandMaterial, sex);
     }
 
     private boolean isValidInput(String userInput) {

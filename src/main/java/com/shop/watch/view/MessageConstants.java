@@ -3,16 +3,16 @@ package com.shop.watch.view;
 public final class MessageConstants {
     public static final String GREETING = "WELCOME TO THE WATCH-SHOP! \n";
     public static final String APPLICATION_COMMAND_MENU = "The list below provides possible options which can " +
-            "be select. \n\n" + "Type 1 to : Print list all products \n" +
-            "Type 2 to : Print list all products sorted by price \n" +
-            "Type 3 to : Print list all products sorted by colour \n" +
-            "Type 4 to : Print list all products sorted by date of receipt \n" +
+            "be select. \n\n" + "Type 1 to : Print list of all products \n" +
+            "Type 2 to : Print list of all products sorted by price \n" +
+            "Type 3 to : Print list of all products sorted by colour \n" +
+            "Type 4 to : Print list of all products sorted by date of receipt \n" +
             "Type 5 to : Print coast of all clocks \n" +
             "Type 6 to : Add new clock to the shop \n" +
             "Type EXIT to : Exit from application";
     public static final String BACK_TO_MAIN_MENU_OR_EXIT = "\nType 1 to : Back to the main menu. \n" +
             "Type 2 to : Exit from application.";
-    public static final String SELECT_CLOCK_TYPE = "Select a clock type from the list bellow: \n" +
+    public static final String SELECT_CLOCK_TYPE = "Select clock type from the list bellow: \n" +
             "Type 1 to : Bracket clock \n" +
             "Type 2 to : Wall clock \n" +
             "Type 3 to : Wrist clock \n" +
@@ -34,11 +34,11 @@ public final class MessageConstants {
             "Type 7 to chose : GREY \n" +
             "Type 8 to chose : ORANGE";
     public static final String ENTER_PRODUCING_COUNTRY = "Enter producing country: ";
-    public static final String ENTER_RECEIPT_DATE = "Enter date of receipt (format: 3/12/2021): ";
+    public static final String ENTER_RECEIPT_DATE = "Enter receipt date (format: 3/12/2021): ";
     public static final String ENTER_GUARANTEE_PERIOD = "Enter guarantee period(number of months, like 3 if three " +
             "month or 5 if five months.): ";
-    public static final String ENTER_CLOCK_HEIGHT = "Enter clock height(format: 15.5): ";
-    public static final String ENTER_CLOCK_WIDTH = "Enter clock width(format: 15.5): ";
+    public static final String ENTER_CLOCK_HEIGHT = "Enter clock's height(format: 15.5): ";
+    public static final String ENTER_CLOCK_WIDTH = "Enter clock's width(format: 15.5): ";
     public static final String ENTER_LIGHTING_PRESENCE = "Enter some info if bracket clock has lighting: ";
     public static final String ENTER_TICKTOCK_PRESENCE = "Enter some info if wall clock has ticktock " +
             "sound: ";

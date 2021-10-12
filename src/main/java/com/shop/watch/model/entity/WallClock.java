@@ -12,12 +12,12 @@ public final class WallClock extends HomeClock {
                      BigDecimal price,
                      Colour colour,
                      String producingCountry,
-                     LocalDate dateOfReceipt,
+                     LocalDate receiptDate,
                      int guarantee,
                      double clockHeight,
                      double clockWidth,
                      String tickTockSoundPresence) {
-        super(brand, modelName, clockType, price, colour, producingCountry, dateOfReceipt, guarantee, clockHeight,
+        super(brand, modelName, clockType, price, colour, producingCountry, receiptDate, guarantee, clockHeight,
                 clockWidth);
         this.tickTockSoundPresence = tickTockSoundPresence;
     }

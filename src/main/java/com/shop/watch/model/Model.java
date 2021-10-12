@@ -41,7 +41,7 @@ public class Model {
                 .collect(Collectors.toUnmodifiableList());
     }
 
-    public List<Clock> sortClocksByDateOfReceipt() {
+    public List<Clock> sortClocksByReceiptDate() {
         return new ArrayList<>(clocks).stream()
                 .sorted(Comparator.comparing(Clock::getReceiptDate))
                 .collect(Collectors.toUnmodifiableList());
@@ -53,24 +53,24 @@ public class Model {
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
-    public void addNewWallClockInTheStorage(String brand, String modelName, MechanismType clockType, BigDecimal price,
-                                            Colour colour, String producingCountry, LocalDate dateOfReceipt,
-                                            int guarantee, double clockHeight, double clockWidth,
-                                            String suspensionPresence) {
+    public void addWallClockToStorage(String brand, String modelName, MechanismType clockType, BigDecimal price,
+                                      Colour colour, String producingCountry, LocalDate receiptDate,
+                                      int guarantee, double clockHeight, double clockWidth,
+                                      String suspensionPresence) {
         clocks.add(new WallClock(brand, modelName, clockType, price, colour, producingCountry,
-                dateOfReceipt, guarantee, clockHeight, clockWidth, suspensionPresence));
+                receiptDate, guarantee, clockHeight, clockWidth, suspensionPresence));
     }
 
-    public void addNewBracketClockInTheStorage(String brand, String modelName, MechanismType clockType, BigDecimal price,
-                                               Colour colour, String producingCountry, LocalDate receiptDate,
-                                               int guarantee, double clockHeight, double clockWidth, String lighting) {
+    public void addBracketClockToStorage(String brand, String modelName, MechanismType clockType, BigDecimal price,
+                                         Colour colour, String producingCountry, LocalDate receiptDate,
+                                         int guarantee, double clockHeight, double clockWidth, String lighting) {
         clocks.add(new BracketClock(brand, modelName, clockType, price, colour, producingCountry,
                 receiptDate, guarantee, clockHeight, clockWidth, lighting));
     }
 
-    public void addNewWristClockInTheStorage(String brand, String modelName, MechanismType clockType, BigDecimal price,
-                                             Colour colour, String producingCountry, LocalDate receiptDate,
-                                             int guarantee, String watchBandMaterial, Sex sex) {
+    public void addWristWatchToStorage(String brand, String modelName, MechanismType clockType, BigDecimal price,
+                                       Colour colour, String producingCountry, LocalDate receiptDate,
+                                       int guarantee, String watchBandMaterial, Sex sex) {
         clocks.add(new WristWatch(brand, modelName, clockType, price, colour, producingCountry,
                 receiptDate, guarantee, watchBandMaterial, sex));
     }
