@@ -3,12 +3,12 @@ package com.shop.watch.model.entity;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class WallClock extends ClockForHome {
-    private String tickTockSoundIsPresent;
+public final class WallClock extends HomeClock {
+    private final String tickTockSoundPresence;
 
     public WallClock(String brand,
                      String modelName,
-                     Mechanism clockType,
+                     MechanismType clockType,
                      BigDecimal price,
                      Colour colour,
                      String producingCountry,
@@ -16,23 +16,19 @@ public class WallClock extends ClockForHome {
                      int guarantee,
                      double clockHeight,
                      double clockWidth,
-                     String presenceOfSuspension) {
+                     String tickTockSoundPresence) {
         super(brand, modelName, clockType, price, colour, producingCountry, dateOfReceipt, guarantee, clockHeight,
                 clockWidth);
-        this.tickTockSoundIsPresent = presenceOfSuspension;
+        this.tickTockSoundPresence = tickTockSoundPresence;
     }
 
-    public String getTickTockSoundIsPresent() {
-        return tickTockSoundIsPresent;
-    }
-
-    public void setTickTockSoundIsPresent(String tickTockSoundIsPresent) {
-        this.tickTockSoundIsPresent = tickTockSoundIsPresent;
+    public String getTickTockSoundPresence() {
+        return tickTockSoundPresence;
     }
 
     @Override
     public String toString() {
         return super.toString() +
-                "Thick tock sound is present: " + tickTockSoundIsPresent + " | ";
+                "Thick tock sound is present: " + tickTockSoundPresence + " | ";
     }
 }

@@ -3,21 +3,21 @@ package com.shop.watch.model.entity;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class WristWatch extends Clock {
-    private String watchBandMaterial;
-    private Sex sex;
+public final class WristWatch extends Clock {
+    private final String watchBandMaterial;
+    private final Sex sex;
 
     public WristWatch(String brand,
                       String modelName,
-                      Mechanism clockType,
+                      MechanismType clockType,
                       BigDecimal price,
                       Colour colour,
                       String producingCountry,
-                      LocalDate dateOfReceipt,
+                      LocalDate receiptDate,
                       int guarantee,
                       String watchBandMaterial,
                       Sex sex) {
-        super(brand, modelName, clockType, price, colour, producingCountry, dateOfReceipt, guarantee);
+        super(brand, modelName, clockType, price, colour, producingCountry, receiptDate, guarantee);
         this.watchBandMaterial = watchBandMaterial;
         this.sex = sex;
     }
@@ -26,16 +26,8 @@ public class WristWatch extends Clock {
         return watchBandMaterial;
     }
 
-    public void setWatchBandMaterial(String watchBandMaterial) {
-        this.watchBandMaterial = watchBandMaterial;
-    }
-
     public Sex getDepartment() {
         return sex;
-    }
-
-    public void setDepartment(Sex sex) {
-        this.sex = sex;
     }
 
     @Override

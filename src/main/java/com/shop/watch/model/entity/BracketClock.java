@@ -3,29 +3,22 @@ package com.shop.watch.model.entity;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class BracketClock extends ClockForHome {
-    private String lighting;
+public final class BracketClock extends HomeClock {
+    private final String lighting;
 
     public BracketClock(String brand,
                         String modelName,
-                        Mechanism clockType,
+                        MechanismType clockType,
                         BigDecimal price,
                         Colour colour,
                         String producingCountry,
-                        LocalDate dateOfReceipt,
+                        LocalDate receiptDate,
                         int guarantee,
                         double clockHeight,
-                        double clockWidth, String lighting) {
-        super(brand, modelName, clockType, price, colour, producingCountry, dateOfReceipt, guarantee, clockHeight,
+                        double clockWidth,
+                        String lighting) {
+        super(brand, modelName, clockType, price, colour, producingCountry, receiptDate, guarantee, clockHeight,
                 clockWidth);
-        this.lighting = lighting;
-    }
-
-    public String getLighting() {
-        return lighting;
-    }
-
-    public void setLighting(String lighting) {
         this.lighting = lighting;
     }
 

@@ -5,18 +5,18 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public abstract class Clock {
-    private String brand;
-    private String modelName;
-    private Mechanism clockType;
-    private BigDecimal price;
-    private Colour colour;
-    private String producingCountry;
-    private LocalDate receiptDate;
-    private int guaranteePeriod;
+    private final String brand;
+    private final String modelName;
+    private final MechanismType clockType;
+    private final BigDecimal price;
+    private final Colour colour;
+    private final String producingCountry;
+    private final LocalDate receiptDate;
+    private final int guaranteePeriod;
 
     public Clock(String brand,
                  String modelName,
-                 Mechanism clockType,
+                 MechanismType clockType,
                  BigDecimal price,
                  Colour colour,
                  String producingCountry,
@@ -36,64 +36,32 @@ public abstract class Clock {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
     public String getModelName() {
         return modelName;
     }
 
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
-    }
-
-    public Mechanism getClockType() {
+    public MechanismType getClockType() {
         return clockType;
-    }
-
-    public void setClockType(Mechanism clockType) {
-        this.clockType = clockType;
     }
 
     public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
     public Colour getColour() {
         return colour;
-    }
-
-    public void setColour(Colour colour) {
-        this.colour = colour;
     }
 
     public String getProducingCountry() {
         return producingCountry;
     }
 
-    public void setProducingCountry(String producingCountry) {
-        this.producingCountry = producingCountry;
-    }
-
     public LocalDate getReceiptDate() {
         return receiptDate;
     }
 
-    public void setReceiptDate(LocalDate receiptDate) {
-        this.receiptDate = receiptDate;
-    }
-
     public int getGuaranteePeriod() {
         return guaranteePeriod;
-    }
-
-    public void setGuaranteePeriod(int guaranteePeriod) {
-        this.guaranteePeriod = guaranteePeriod;
     }
 
     @Override

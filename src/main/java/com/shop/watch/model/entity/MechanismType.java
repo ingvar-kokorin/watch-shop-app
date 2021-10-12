@@ -1,5 +1,5 @@
 package com.shop.watch.model.entity;
 
-public enum Mechanism {
+public enum MechanismType {
     MECHANICAL, ELECTRICAL, QUARTZ
 }

@@ -4,7 +4,7 @@ public class View {
     InputReader InputReader;
     OutputWriter outputWriter;
 
-    public View(InputReader inputReader, OutputWriter outputWriter) {
+    public View() {
         this.InputReader = new InputReader();
         this.outputWriter = new OutputWriter();
     }
