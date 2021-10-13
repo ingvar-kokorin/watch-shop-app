@@ -7,7 +7,7 @@ public final class MessageConstants {
             "Type 2 to : Print list of all products sorted by price \n" +
             "Type 3 to : Print list of all products sorted by colour \n" +
             "Type 4 to : Print list of all products sorted by date of receipt \n" +
-            "Type 5 to : Print coast of all clocks \n" +
+            "Type 5 to : Print cost of all clocks \n" +
             "Type 6 to : Add new clock to the shop \n" +
             "Type EXIT to : Exit from application";
     public static final String BACK_TO_MAIN_MENU_OR_EXIT = "\nType 1 to : Back to the main menu. \n" +

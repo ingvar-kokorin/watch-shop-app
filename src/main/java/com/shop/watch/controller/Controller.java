@@ -218,7 +218,7 @@ public class Controller {
     private boolean isValidInput(String userInput) {
         List<String> validAddCommands = List.of("1", "2", "3");
 
-        if (validAddCommands.contains(userInput)) {
+        if (!validAddCommands.contains(userInput)) {
             view.printMessage(WRONG_NUMBER_SELECTED);
             return false;
         }
